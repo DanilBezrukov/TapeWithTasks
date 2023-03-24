@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента с задачами</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div>
+            <p>Вид:</p>
+            <div class="btn listBtn activeLayout">Список</div>
+            <div class="btn tileBtn">Плитка</div>
+        </div>
+        <div>
+            <p>Сортировать:</p>
+            <select name="" id="sorting">
+                <option value="all">Все</option>
+                <option value="NotFulfilled">Сначало не выполненные</option>
+            </select>
+        </div>
+        <div>
+            <p>Кол-во:</p>
+            <select name="" id="numberPosts">
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </nav>
+    <main class="container" data-display="0"></main>
+    <ul id="pagination"></ul>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

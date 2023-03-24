@@ -1,0 +1,218 @@
+body {
+    background-color: rgb(161, 179, 255, 0.6);
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+nav>div {
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+}
+
+p {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.listBtn,
+.tileBtn {
+    line-height: 35px;
+    background-color: rgb(161, 179, 255);
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    transform: translate(0%, 25%);
+    text-indent: 40px;
+    margin-right: 5px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.listBtn::before {
+    content: "";
+    background: url(../img/listBtn.svg) no-repeat;
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+
+}
+
+.tileBtn::before {
+    content: "";
+    background: url(../img/tileBtn.svg) no-repeat;
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+}
+
+.activeLayout {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2) inset;
+    cursor: default;
+}
+
+.activeLayout:hover {
+    outline: 1px solid rgb(161, 179, 255);
+}
+
+select {
+    line-height: 35px;
+    background-color: rgb(161, 179, 255);
+    border-radius: 5px;
+    height: 35px;
+    transform: translate(0%, 25%);
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    padding: 0px 12%;
+}
+
+main>div {
+    background-color: #fff;
+    height: auto;
+    padding: 10px;
+    border-radius: 6px;
+    display: grid;
+
+}
+
+[data-display="0"]>div {
+    margin-bottom: 15px;
+}
+
+[data-display="0"]>div p {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+[data-display="1"] {
+    margin: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    align-content: start;
+    gap: 15px;
+}
+
+.container>div>p:nth-child(1) {
+    color: #8B4513;
+
+}
+
+.container>div>p:nth-child(1)::before {
+    content: "Задача: ";
+    color: #000;
+    font-size: 20px;
+}
+
+.container>div>p:nth-child(2) {
+    margin-top: 15px;
+    align-self: end;
+
+}
+
+.container>div>p:nth-child(2)::before {
+    content: "Состояние: ";
+    color: #000;
+    font-size: 15px;
+}
+
+#pagination {
+    display: flex;
+    padding: 25px 0;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#pagination li {
+    background-color: rgb(161, 179, 255);
+    border-radius: 6px;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+#pagination li:hover {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2) inset;
+    cursor: pointer;
+}
+
+#pagination li.active {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2) inset;
+    cursor: default;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0px 7% 0px 2%;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav>div {
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    select,
+    .btn {
+        width: 90%;
+        margin: 0px 2%;
+        margin-bottom: 10px;
+    }
+
+    nav p {
+        width: 100%;
+        margin-left: 2%;
+        margin-top: 10px;
+        font-size: 20px;
+        line-height: normal;
+    }
+}
+
+@media screen and (max-width: 467px) {
+    nav>div:nth-child(1) {
+        display: none;
+    }
+
+    main,
+    [data-display="0"],
+    [data-display="1"] {
+        display: block;
+        width: 100%;
+        padding: 0px 2%;
+    }
+
+    main>div {
+        background-color: #fff;
+        margin-bottom: 15px;
+        height: auto;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    nav p {
+        margin-top: 10px;
+    }
+}
